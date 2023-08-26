@@ -1,0 +1,37 @@
+#e{
+    margin: auto;
+    color: blue;
+}
+.container{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.record{
+    display:block;
+   border-radius: 5px;
+    background-color: aliceblue;
+    padding: 10px;
+    margin-bottom: 20px ;
+ 
+}
+.contents{
+    display:flex;
+      justify-content: space-between;
+      align-items: center;
+}
+.token{
+    display: flex;
+}
+.explanation{
+margin: 0 8px;
+}
+.explanation h6{
+   font-weight: bold;
+}
+.explanation p{
+   font-size: 0.7em;
+}
+
