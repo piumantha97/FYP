@@ -51,13 +51,13 @@ console.log('Hi');
   if (status === "authenticated") {
     return (
       <div className={styles.container}>
-        <button>
+        <button className={styles.btnMore}>
           <Link className="bg-red p-2" href={"/more"}>
             More Familiar Recommendation
           </Link>
         </button>
 
-        <h2 id="e">Select your Demograpics</h2>
+        <h2 className={styles.tt}>Select your Demograpics</h2>
         <br />
         <form    onSubmit={handleSubmit}>
           {/*  */}
@@ -257,9 +257,9 @@ console.log('Hi');
             </div>
           </div>
           {/*  */}
-          <button
+          <button className={styles.submit}
         type="submit"
-        className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
+        
       >
        Submit
       </button>

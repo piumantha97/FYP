@@ -1,7 +1,34 @@
 .back{
     background-color: white;
-    padding: 20px;
+  margin-top: 10px;
     background: url(../public/more.webp);
     width: 100%;
     height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+.topic{
+    color: brown;
+    font-size: 40px;
+    font-family:  cursive;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+.satisfy{
+    font-size: 50px;
+    text-align: center;
+    color: rgb(12, 155, 16);
+    margin: auto;
+    font-family:  cursive;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+.place{
+    font-size: 40px;
+    font-family:  cursive;
+    color: brown;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
 }

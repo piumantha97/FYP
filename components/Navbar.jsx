@@ -8,7 +8,7 @@ export default function Navbar() {
 
   if (status === "authenticated") {
   return (
-    <div className="p-4 flex justify-between items-center shadow-md bg-white w-full mt-20">
+    <div className={styles.nav}>
       <Link className="font-bold text-lg text-blue-700" href={"/"}>
         Mobile Phone Recommendation
       </Link>
@@ -18,7 +18,7 @@ export default function Navbar() {
         <button
           onClick={() => signOut()}
          
-          className="bg-slate-900 text-white px-6 py-2 rounded-md"
+          className={styles.signIn}
           
         >
           Sign Out

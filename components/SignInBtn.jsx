@@ -1,14 +1,31 @@
 "use client";
-
+import { Inter, Rubik } from '@next/font/google';
 import Image from "next/image";
 import { signIn } from "next-auth/react";
 import styles from "./signinbtn.module.css";
+
+const title = Rubik({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+ const text = Inter({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
+
+
 export default function SignInBtn() {
   return (
     <div>
-<div><p>Don't You Have Enough Knowledge to select your mobile Mobile phone</p>
-  <p>Don't Worry</p>
-  <p>This is the right place</p>
+   <div  lassName='mt-32'>
+  Hi!
+</div>
+
+
+<div className='mt-32'><p  className={styles.topic}>Don't You Have Enough Knowledge to select your mobile Mobile phone !!!</p>
+  <p className={styles.satisfy}>Don't Worry</p>
+  <p className={styles.place}>This is the right place</p>
 </div>
     <div className={styles.back}>
     

@@ -1,14 +1,30 @@
-#e{
+.tt{
     margin: auto;
     color: blue;
+    font-weight: bold;
+    margin-left: 180px;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .container{
     background-color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 5px;
     width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.btnMore{
+    background-color: red;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 5px 10px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.btnMore:hover {background-color: #7e1111}
 
 .record{
     display:block;
@@ -16,7 +32,7 @@
     background-color: aliceblue;
     padding: 10px;
     margin-bottom: 20px ;
- 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .contents{
     display:flex;
@@ -46,4 +62,23 @@ color: #1c87c9;
 background-color: #ffffff;
 border-radius: 5px;
 box-shadow: 2px 2px #ccc;
+}
+.dropDown:hover{
+    
+}
+
+.submit{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color:rgb(31, 231, 31) ;
+    width: fit-content;
+    padding: 4px 6px;
+    font-size: large;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 5px;
+    
+}
+.submit:hover{
+ 
+     background-color: #3e8e41
 }
