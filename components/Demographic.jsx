@@ -4,10 +4,50 @@ import Image from "next/image";
 import SignInBtn from "./SignInBtn";
 import { useSession } from "next-auth/react";
 import styles from "./demographic.module.css";
+import {useState} from 'react'
+import {useRouter} from "next/navigation"
 
 export default function Demographic() {
   const { status, data: session } = useSession();
 
+  const [age, setAge] = useState("");
+  const [location, setLocation] = useState("");
+
+  const router = useRouter();
+
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!age || !location) {
+      alert("agee and location are required.");
+      return;
+    }
+
+    try {
+      const res = await fetch("http://localhost:3000/api/addSearch", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ age, location }),
+      });
+
+      if (res.ok) {
+        router.push("/");
+      } else {
+        throw new Error("Failed to create a serach");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+
+
+console.log('Hi');
   if (status === "authenticated") {
     return (
       <div className={styles.container}>
@@ -19,7 +59,7 @@ export default function Demographic() {
 
         <h2 id="e">Select your Demograpics</h2>
         <br />
-        <form action="">
+        <form    onSubmit={handleSubmit}>
           {/*  */}
           <div className={styles.record}>
             <div className={styles.contents}>
@@ -34,13 +74,14 @@ export default function Demographic() {
 
               <div className={styles.reco}>
                 {" "}
-                <select name="cars" id="cars" className={styles.dropDown}>
+                <select name="cars" id="cars" className={styles.dropDown}  onChange={(e) => setAge(e.target.value)}
+        value={age} >
                 <option value="" disabled selected>Select your option</option>
-                  <option value="volvo">12 - 17</option>
-                  <option value="saab">18 - 25</option>
-                  <option value="opel">26 - 34</option>
-                  <option value="audi">35 -54</option>
-                  <option value="audi">55 -</option>
+                  <option value="12">12 - 17</option>
+                  <option value="18">18 - 25</option>
+                  <option value="26">26 - 34</option>
+                  <option value="35">35 -54</option>
+                  <option value="55">55 -</option>
                 </select>
               </div>
             </div>
@@ -82,7 +123,8 @@ export default function Demographic() {
 
               <div className={styles.dropdown}>
                 {" "}
-                <select className={styles.dropDown}>
+                <select className={styles.dropDown}    onChange={(e) => setLocation(e.target.value)}
+        value={location}>
                 <option value="" disabled selected>Select your option</option>
                   <option value="volvo">Ampara</option>
                   <option value="saab">Anuradapura</option>
@@ -215,7 +257,12 @@ export default function Demographic() {
             </div>
           </div>
           {/*  */}
-          <button>Submit </button>
+          <button
+        type="submit"
+        className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
+      >
+       Submit
+      </button>
           <br />
         </form>
       </div>
