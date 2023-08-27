@@ -4,5 +4,6 @@
 
 
 body{
-    background-color: antiquewhite;
+    background: url(../public/g2.jpg) no-repeat ;
+    background-size: 100%;
 }

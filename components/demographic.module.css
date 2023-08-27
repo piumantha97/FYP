@@ -9,6 +9,7 @@
     width: 100%;
 }
 
+
 .record{
     display:block;
    border-radius: 5px;
@@ -35,3 +36,14 @@ margin: 0 8px;
    font-size: 0.7em;
 }
 
+.dropDown{
+
+width: 120px;
+height: 30px;
+border: 1px solid #999;
+font-size: 10px;
+color: #1c87c9;
+background-color: #ffffff;
+border-radius: 5px;
+box-shadow: 2px 2px #ccc;
+}
