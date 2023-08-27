@@ -3,7 +3,11 @@ import mongoose, { Schema } from "mongoose";
 const addSearchSchema = new Schema(
   {
     age: Number,
-    location: String,
+    gender: String,
+    location: Number,
+    occupation: String,
+    education: String,
+
   },
   {
     timestamps: true,

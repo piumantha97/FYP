@@ -12,18 +12,22 @@ export default function Demographic() {
 
   const [age, setAge] = useState("");
   const [location, setLocation] = useState("");
+  const [occupation, setOccupation] = useState("");
+  const [gender, setGender] = useState("");
+  const [education, setEducation] = useState("");
 
   const router = useRouter();
 
 
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+   
 
-    if (!age || !location) {
-      alert("agee and location are required.");
+    if (!age || !gender || !location || !education || !occupation) {
+      alert("every field is  required.");
       return;
     }
+  
 
     try {
       const res = await fetch("http://localhost:3000/api/addSearch", {
@@ -31,7 +35,7 @@ export default function Demographic() {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ age, location }),
+        body: JSON.stringify({ age,gender, location,occupation,education }),
       });
 
       if (res.ok) {
@@ -72,10 +76,9 @@ console.log('Hi');
                 </div>
               </div>
 
-              <div className={styles.reco}>
+              <div className={styles.rec}>
                 {" "}
-                <select name="cars" id="cars" className={styles.dropDown}  onChange={(e) => setAge(e.target.value)}
-        value={age} >
+                <select name="cars" id="cars" className={styles.dropDown}  onChange={(e) => setAge(e.target.value)} value={age} >
                 <option value="" disabled selected>Select your option</option>
                   <option value="12">12 - 17</option>
                   <option value="18">18 - 25</option>
@@ -101,10 +104,11 @@ console.log('Hi');
 
               <div className={styles.dropdown}>
                 {" "}
-                <select name="cars" id="cars" className={styles.dropDown}>
+                <select name="cars" id="cars" className={styles.dropDown}  onChange={(e) => setGender(e.target.value)}
+        value={gender} >
                 <option value="" disabled selected>Select your option</option>
-                  <option value="volvo">Male</option>
-                  <option value="saab">Female</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
                 </select>
               </div>
             </div>
@@ -126,30 +130,30 @@ console.log('Hi');
                 <select className={styles.dropDown}    onChange={(e) => setLocation(e.target.value)}
         value={location}>
                 <option value="" disabled selected>Select your option</option>
-                  <option value="volvo">Ampara</option>
-                  <option value="saab">Anuradapura</option>
-                  <option value="opel">Badulla</option>
-                  <option value="audi">Batticaloa</option>
-                  <option value="volvo">Colombo</option>
-                  <option value="saab">Galle</option>
-                  <option value="opel">Gampaha</option>
-                  <option value="audi">Hambantota</option>
-                  <option value="volvo">Jaffna</option>
-                  <option value="saab">Kalutara</option>
-                  <option value="opel">Kandy</option>
-                  <option value="audi">Kegalle</option>
-                  <option value="volvo">Kilinochchi</option>
-                  <option value="saab">Kurunegala</option>
-                  <option value="opel">Mannar</option>
-                  <option value="audi">Matale</option>
-                  <option value="audi">Matara</option>
-                  <option value="volvo">Moneragala</option>
-                  <option value="saab">Mullaitivu</option>
-                  <option value="opel">Nuwara Eliya</option>
-                  <option value="audi">Pollonnaruwa</option>
-                  <option value="volvo">Puttalam</option>
-                  <option value="saab">Trincomalee</option>
-                  <option value="opel">Vavunia</option>
+                  <option value="1">Ampara</option>
+                  <option value="2">Anuradapura</option>
+                  <option value="3">Badulla</option>
+                  <option value="4">Batticaloa</option>
+                  <option value="5">Colombo</option>
+                  <option value="6">Galle</option>
+                  <option value="7">Gampaha</option>
+                  <option value="8">Hambantota</option>
+                  <option value="9">Jaffna</option>
+                  <option value="10">Kalutara</option>
+                  <option value="11">Kandy</option>
+                  <option value="12">Kegalle</option>
+                  <option value="13">Kilinochchi</option>
+                  <option value="14">Kurunegala</option>
+                  <option value="15">Mannar</option>
+                  <option value="16">Matale</option>
+                  <option value="17">Matara</option>
+                  <option value="18">Moneragala</option>
+                  <option value="19">Mullaitivu</option>
+                  <option value="20">Nuwara Eliya</option>
+                  <option value="21">Pollonnaruwa</option>
+                  <option value="22">Puttalam</option>
+                  <option value="23">Trincomalee</option>
+                  <option value="24">Vavunia</option>
                 </select>
               </div>
             </div>
@@ -168,7 +172,8 @@ console.log('Hi');
 
               <div className={styles.dropdown}>
                 {" "}
-                <select name="cars" id="cars" className={styles.dropDown}>
+                <select name="cars" id="cars" className={styles.dropDown}  onChange={(e) => setOccupation(e.target.value)}
+        value={occupation} >
                 <option value="" disabled selected>Select your option</option>
                   <option value="volvo">School Student</option>
                   <option value="saab">University Student</option>
@@ -246,7 +251,8 @@ console.log('Hi');
 
               <div className={styles.dropdown}>
                 {" "}
-                <select name="cars" id="cars" className={styles.dropDown}>
+                <select name="cars" id="cars" className={styles.dropDown}  onChange={(e) => setEducation(e.target.value)}
+        value={education} >
                 <option value="" disabled selected>Select your option</option>
                   <option value="volvo">O/L or Below</option>
                   <option value="saab">A/L</option>
